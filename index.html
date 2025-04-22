@@ -70,15 +70,22 @@
       padding: 1rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s ease;
+      position: relative;
+      z-index: 10;
     }
 
     .crate-box:hover {
       transform: scale(1.02);
     }
+
+    @media (max-width: 640px) {
+      #kelp-layer img {
+        height: 15vh !important;
+      }
+    }
   </style>
 </head>
 <body class="relative overflow-x-hidden">
-
   <header class="w-full bg-[#b3ecff] shadow-md p-4">
     <nav class="flex justify-center flex-wrap gap-2 text-sm">
       <a href="#home" class="nav-button">Home</a>
@@ -102,9 +109,8 @@
   <section id="crates" class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="text-2xl text-center font-bold text-[#caf0f8] mb-10">🧱 Nieuw: Crates op de server!</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <div class="crate-box">
-        <h3 class="font-bold text-[#ffffff] text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
+      <div class="crate-box">
+        <h3 class="font-bold text-white text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
         <ul class="list-disc list-inside text-sm">
           <li>32x Bread</li>
           <li>16x Arrows</li>
@@ -162,7 +168,6 @@
           <li>Custom Pet Token</li>
         </ul>
       </div>
-
     </div>
   </section>
 
@@ -170,30 +175,23 @@
     &copy; 2025 AxolotlMC - Alle rechten voorbehouden.
   </footer>
 
-  <!-- 🌿 Responsive Kelp Layer -->
-  <div id="kelp-layer" class="fixed bottom-0 left-0 w-full pointer-events-none z-0 flex justify-between items-end px-2 sm:px-4 transition-transform duration-700 ease-out" style="background: linear-gradient(to top, #001d33 15%, transparent);">
-    <!-- Seagrass left -->
-    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-32 sm:h-48 w-auto -ml-4">
-
-    <!-- Center Kelp -->
-    <img src="https://raw.githubusercontent.com/RenzoWit35/WebSite/refs/heads/main/Kelp_Plant.gif" alt="Minecraft kelp" class="h-36 sm:h-60 w-auto mx-auto">
-
-    <!-- Seagrass right -->
-    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-32 sm:h-48 w-auto -mr-4 transform scale-x-[-1]">
+  <div id="kelp-layer" class="fixed bottom-0 left-0 w-full pointer-events-none z-0 flex justify-between px-4 transition-transform duration-700 ease-out" style="height: 20vh; background: linear-gradient(to top, #001d33 15%, transparent);">
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" style="height: 18vh; max-height: 140px;" class="w-auto -ml-5">
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" style="height: 18vh; max-height: 140px; transform: scaleX(-1);" class="w-auto ml-16">
   </div>
 
   <script>
     const kelp = document.getElementById('kelp-layer');
-    const maxOffset = window.innerWidth < 640 ? 180 : 280;
-
-    kelp.style.transform = `translateY(${maxOffset}px)`;
+    const vh = window.innerHeight;
+    kelp.style.transform = 'translateY(30vh)';
+    const initialOffset = window.innerWidth < 640 ? vh * 0.5 : vh * 0.5; // Adjust these values
 
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
-      const kelpOffset = Math.min(scrollY * 0.4, maxOffset);
-      kelp.style.transform = `translateY(${maxOffset - kelpOffset}px)`;
+      const maxOffset = window.innerWidth < 640 ? vh * 0.42 : vh * 0.45;
+      const kelpOffset = Math.min(scrollY * 0.9, maxOffset);
+      kelp.style.transform = `translateY(${initialOffset - kelpOffset}px)`;
     });
   </script>
-
 </body>
 </html>
