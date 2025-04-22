@@ -174,24 +174,3 @@
   <footer class="bg-[#001d33] text-white text-center py-6 text-xs">
     &copy; 2025 AxolotlMC - Alle rechten voorbehouden.
   </footer>
-
-  <div id="kelp-layer" class="fixed bottom-0 left-0 w-full pointer-events-none z-0 flex justify-between px-4 transition-transform duration-700 ease-out" style="height: 20vh; background: linear-gradient(to top, #001d33 15%, transparent);">
-    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" style="height: 18vh; max-height: 140px;" class="w-auto -ml-5">
-    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" style="height: 18vh; max-height: 140px; transform: scaleX(-1);" class="w-auto ml-16">
-  </div>
-
-  <script>
-    const kelp = document.getElementById('kelp-layer');
-    const vh = window.innerHeight;
-    kelp.style.transform = 'translateY(30vh)';
-    const initialOffset = window.innerWidth < 640 ? vh * 0.5 : vh * 0.5; // Adjust these values
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const maxOffset = window.innerWidth < 640 ? vh * 0.42 : vh * 0.45;
-      const kelpOffset = Math.min(scrollY * 0.9, maxOffset);
-      kelp.style.transform = `translateY(${initialOffset - kelpOffset}px)`;
-    });
-  </script>
-</body>
-</html>
