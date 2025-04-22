@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AxolotlMC</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #aee9f5, #d0f0ff);
+      background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.3) 2%, transparent 0),
+                        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.2) 3%, transparent 0),
+                        url('https://www.transparenttextures.com/patterns/water-color.png');
+      background-size: cover;
+      animation: floatBackground 20s linear infinite;
+    }
+
+    @keyframes floatBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .axolotl-text {
+      background: linear-gradient(to right, #6ee7b7, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-bg {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+  <header class="bg-blue-200 bg-opacity-90 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <h1 class="text-3xl font-bold axolotl-text">AxolotlMC</h1>
+      <nav class="space-x-4 text-lg">
+        <a href="#home" class="hover:text-blue-600">Home</a>
+        <a href="#over" class="hover:text-blue-600">Over ons</a>
+        <a href="#regels" class="hover:text-blue-600">Regels</a>
+        <a href="#vote" class="hover:text-blue-600">Vote</a>
+        <a href="#shop" class="hover:text-blue-600">Shop</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="text-center py-20">
+    <h2 class="text-5xl font-bold axolotl-text mb-4 animate-bounce">Welkom bij AxolotlMC!</h2>
+    <p class="text-xl">Dé leukste Nederlandse Minecraft-server met water vibes 🌊</p>
+  </section>
+
+  <section id="over" class="py-16">
+    <div class="container mx-auto px-6 section-bg">
+      <h2 class="text-3xl font-bold mb-4">Over ons</h2>
+      <p>AxolotlMC is een gezellige Minecraft-community gericht op survival, creativiteit en plezier. Of je nu solo speelt of samen met vrienden, bij ons voel je je thuis!</p>
+    </div>
+  </section>
+
+  <section id="regels" class="py-16">
+    <div class="container mx-auto px-6 section-bg">
+      <h2 class="text-3xl font-bold mb-4">Regels</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Wees respectvol naar anderen</li>
+        <li>Geen hacks of cheats</li>
+        <li>Niet spammen of adverteren</li>
+        <li>Volg de instructies van het staff team</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="vote" class="py-16 text-center">
+    <div class="container mx-auto px-6 section-bg">
+      <h2 class="text-3xl font-bold mb-4">Stem op ons!</h2>
+      <p>Steun de server en ontvang beloningen door op ons te stemmen op Minecraft serverlijsten.</p>
+      <a href="#" class="mt-4 inline-block bg-blue-400 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition">Stem nu</a>
+    </div>
+  </section>
+
+  <section id="shop" class="py-16 text-center">
+    <div class="container mx-auto px-6 section-bg">
+      <h2 class="text-3xl font-bold mb-4">Shop</h2>
+      <p>Koop ranks, cosmetics en meer in onze winkel!</p>
+      <a href="#" class="mt-4 inline-block bg-blue-300 text-white px-6 py-2 rounded-full hover:bg-blue-400 transition">Bezoek Shop</a>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 text-center">
+    <div class="container mx-auto px-6 section-bg">
+      <h2 class="text-3xl font-bold mb-4">Contact</h2>
+      <p>Join onze Discord of stuur ons een bericht!</p>
+      <div class="mt-4">
+        <a href="https://discord.gg/axolotlmc" target="_blank" class="inline-block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-blue-100 text-center py-6 text-sm">
+    &copy; 2025 AxolotlMC - Alle rechten voorbehouden.
+  </footer>
+</body>
+</html>
