@@ -70,18 +70,10 @@
       padding: 1rem;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s ease;
-      position: relative;
-      z-index: 10;
     }
 
     .crate-box:hover {
       transform: scale(1.02);
-    }
-
-    @media (max-width: 640px) {
-      #kelp-layer img {
-        height: 15vh !important;
-      }
     }
   </style>
 </head>
@@ -106,71 +98,50 @@
     <a href="#" class="hero-button">JOIN NU!</a>
   </section>
 
-  <section id="crates" class="max-w-6xl mx-auto px-4 py-12">
+  <section id="crates" class="max-w-6xl mx-auto px-4 py-32">
     <h2 class="text-2xl text-center font-bold text-[#caf0f8] mb-10">🧱 Nieuw: Crates op de server!</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="crate-box">
-        <h3 class="font-bold text-white text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>32x Bread</li>
-          <li>16x Arrows</li>
-          <li>Iron Pickaxe (Unbreaking I)</li>
-          <li>Wooden Sword (Sharpness I)</li>
-          <li>100 - 250 Coins</li>
-          <li>Random Common Voucher</li>
-        </ul>
-      </div>
 
       <div class="crate-box">
-        <h3 class="font-bold text-yellow-400 text-lg mb-2">🟡 <span class='inline-block animate-bounce'>💦</span> Uncommon Crate <span class='inline-block animate-pulse'>🌱</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>10x Gold Ingots</li>
-          <li>Iron Chestplate (Prot II)</li>
-          <li>Bow (Power II)</li>
-          <li>3x Golden Apples</li>
-          <li>200 - 500 Coins</li>
-          <li>Uncommon Token</li>
-        </ul>
-      </div>
+  <h3 class="font-bold text-[#ffffff] text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
+  <p class="text-sm text-white mb-2">Een simpele krat vol basismaterialen voor beginners. Perfect om je avontuur mee te starten!</p>
+</div>
 
       <div class="crate-box">
-        <h3 class="font-bold text-blue-400 text-lg mb-2">🔵 <span class='inline-block animate-bounce'>🌊</span> Rare Crate <span class='inline-block animate-pulse'>🌾</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>5x Diamond</li>
-          <li>Iron Sword (Sharpness III, Unbreaking II)</li>
-          <li>Elytra</li>
-          <li>Rare Voucher</li>
-          <li>500 - 1500 Coins</li>
-          <li>Totem of Undying</li>
-        </ul>
-      </div>
+  <h3 class="font-bold text-yellow-400 text-lg mb-2">🟡 <span class='inline-block animate-bounce'>💦</span> Uncommon Crate <span class='inline-block animate-pulse'>🌱</span></h3>
+  <p class="text-sm text-white mb-2">Voor de iets verder gevorderde speler. Met bruikbare gear en kleine verrassingen.</p>
+</div>
 
       <div class="crate-box">
-        <h3 class="font-bold text-purple-400 text-lg mb-2">🟣 <span class='inline-block animate-bounce'>💠</span> Epic Crate <span class='inline-block animate-pulse'>🪸</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>Epic Elytra</li>
-          <li>Diamond Axe (Efficiency IV)</li>
-          <li>Trident (Loyalty III)</li>
-          <li>1000 - 5000 Coins</li>
-          <li>Epic Token</li>
-          <li>10x Enchanted Golden Apples</li>
-        </ul>
-      </div>
+  <h3 class="font-bold text-blue-400 text-lg mb-2">🔵 <span class='inline-block animate-bounce'>🌊</span> Rare Crate <span class='inline-block animate-pulse'>🌾</span></h3>
+  <p class="text-sm text-white mb-2">Een zeldzame krat vol waardevolle items voor avonturiers die klaar zijn voor meer uitdaging.</p>
+</div>
 
       <div class="crate-box">
-        <h3 class="font-bold text-orange-400 text-lg mb-2">🟠 <span class='inline-block animate-bounce'>🌟</span> Legendary Crate <span class='inline-block animate-pulse'>🌊</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>Legendary Weapon</li>
-          <li>Elytra + Rockets Bundle</li>
-          <li>Netherite Ingot</li>
-          <li>Beacon</li>
-          <li>Spawner</li>
-          <li>Custom Pet Token</li>
-        </ul>
-      </div>
+  <h3 class="font-bold text-purple-400 text-lg mb-2">🟣 <span class='inline-block animate-bounce'>💠</span> Epic Crate <span class='inline-block animate-pulse'>🪸</span></h3>
+  <p class="text-sm text-white mb-2">Epische beloningen met flair. Zeldzame wapens, tridents en meer voor serieuze spelers.</p>
+</div>
+
+      <div class="crate-box">
+  <h3 class="font-bold text-orange-400 text-lg mb-2">🟠 <span class='inline-block animate-bounce'>🌟</span> Legendary Crate <span class='inline-block animate-pulse'>🌊</span></h3>
+  <p class="text-sm text-white mb-2">De ultieme krat. Bevat exclusieve, krachtige en visueel indrukwekkende loot.</p>
+</div>
+
     </div>
   </section>
 
   <footer class="bg-[#001d33] text-white text-center py-6 text-xs">
     &copy; 2025 AxolotlMC - Alle rechten voorbehouden.
   </footer>
+
+  <div id="kelp-layer" class="absolute bottom-0 w-full h-[180px] flex justify-between px-4 z-0"
+  <!-- Seagrass left -->
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-48 sm:h-60 md:h-64 lg:h-72 w-auto -ml-5">
+
+  <!-- Seagrass right -->
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-48 sm:h-60 md:h-64 lg:h-72 w-auto ml-16" style="transform: scaleX(-1);">
+</div>
+
+
+</body>
+</html>
