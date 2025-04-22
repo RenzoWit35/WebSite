@@ -10,15 +10,20 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #92e2f5 0%, #b8f0f5 40%, #d7f7ff 100%);
+      background: linear-gradient(to bottom, #c2f0ff 0%, #7cd3f7 30%, #1e81b0 60%, #004466 90%, #001d33 100%);
       overflow-x: hidden;
       font-family: 'Press Start 2P', cursive;
+      color: #e0f7fa;
+    }
+
+    section {
+      transition: background 1s ease;
     }
 
     .nav-button {
-      background-color: #e3f6f5;
-      border: 2px solid #bae6fd;
-      color: #0369a1;
+      background-color: #e0f7fa;
+      border: 2px solid #90cdf4;
+      color: #004466;
       padding: 8px 16px;
       margin: 4px;
       border-radius: 6px;
@@ -27,13 +32,13 @@
     }
 
     .nav-button:hover {
-      background-color: #d0f0fd;
+      background-color: #b3ecff;
       transform: translateY(-2px);
     }
 
     .ip-banner {
-      background-color: #0284c7;
-      color: #f0fdfa;
+      background-color: #0077b6;
+      color: #e0f7fa;
       padding: 6px 12px;
       display: inline-block;
       border-radius: 8px;
@@ -42,25 +47,38 @@
     }
 
     .hero-button {
-      background-color: #67e8f9;
+      background-color: #90e0ef;
       padding: 10px 20px;
-      color: #0f172a;
+      color: #001d33;
       font-weight: bold;
       display: inline-block;
       border-radius: 6px;
       margin-top: 20px;
-      border: 2px solid #0ea5e9;
+      border: 2px solid #0077b6;
       transition: 0.3s;
     }
 
     .hero-button:hover {
-      background-color: #a5f3fc;
+      background-color: #caf0f8;
       transform: scale(1.05);
+    }
+
+    .crate-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .crate-box:hover {
+      transform: scale(1.02);
     }
   </style>
 </head>
-<body>
-  <header class="w-full bg-[#c0ebf5] shadow-md p-4">
+<body class="relative overflow-x-hidden">
+  <header class="w-full bg-[#b3ecff] shadow-md p-4">
     <nav class="flex justify-center flex-wrap gap-2 text-sm">
       <a href="#home" class="nav-button">Home</a>
       <a href="#news" class="nav-button">Nieuws</a>
@@ -76,17 +94,17 @@
   <section id="home" class="text-center py-16">
     <img src="https://github.com/RenzoWit35/WebSite/blob/main/minecraft_title.png?raw=true" alt="AxolotlMC logo" class="mx-auto w-full max-w-xs md:max-w-md lg:max-w-lg mb-4">
     <div class="ip-banner">IP: play.axolotlmc.nl</div>
-    <p class="text-base text-black mt-6">Dé leukste Nederlandse Minecraft-server met water & pixel vibes 🌊🟩</p>
+    <p class="text-base mt-6">Dé leukste Nederlandse Minecraft-server met water & pixel vibes 🌊🟩</p>
     <a href="#" class="hero-button">JOIN NU!</a>
   </section>
 
   <section id="crates" class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl text-center font-bold text-[#0369a1] mb-10">🧱 Nieuw: Crates op de server!</h2>
+    <h2 class="text-2xl text-center font-bold text-[#caf0f8] mb-10">🧱 Nieuw: Crates op de server!</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="bg-white bg-opacity-60 backdrop-blur-md p-4 rounded-lg shadow-lg">
-        <h3 class="font-bold text-[#71717a] text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
-        <ul class="list-disc list-inside text-sm text-gray-800">
+      <div class="crate-box">
+        <h3 class="font-bold text-[#ffffff] text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
+        <ul class="list-disc list-inside text-sm">
           <li>32x Bread</li>
           <li>16x Arrows</li>
           <li>Iron Pickaxe (Unbreaking I)</li>
@@ -96,9 +114,9 @@
         </ul>
       </div>
 
-      <div class="bg-white bg-opacity-60 backdrop-blur-md p-4 rounded-lg shadow-lg">
-        <h3 class="font-bold text-yellow-500 text-lg mb-2">🟡 <span class='inline-block animate-bounce'>💦</span> Uncommon Crate <span class='inline-block animate-pulse'>🌱</span></h3>
-        <ul class="list-disc list-inside text-sm text-gray-800">
+      <div class="crate-box">
+        <h3 class="font-bold text-yellow-400 text-lg mb-2">🟡 <span class='inline-block animate-bounce'>💦</span> Uncommon Crate <span class='inline-block animate-pulse'>🌱</span></h3>
+        <ul class="list-disc list-inside text-sm">
           <li>10x Gold Ingots</li>
           <li>Iron Chestplate (Prot II)</li>
           <li>Bow (Power II)</li>
@@ -108,9 +126,9 @@
         </ul>
       </div>
 
-      <div class="bg-white bg-opacity-60 backdrop-blur-md p-4 rounded-lg shadow-lg">
-        <h3 class="font-bold text-blue-500 text-lg mb-2">🔵 <span class='inline-block animate-bounce'>🌊</span> Rare Crate <span class='inline-block animate-pulse'>🌾</span></h3>
-        <ul class="list-disc list-inside text-sm text-gray-800">
+      <div class="crate-box">
+        <h3 class="font-bold text-blue-400 text-lg mb-2">🔵 <span class='inline-block animate-bounce'>🌊</span> Rare Crate <span class='inline-block animate-pulse'>🌾</span></h3>
+        <ul class="list-disc list-inside text-sm">
           <li>5x Diamond</li>
           <li>Iron Sword (Sharpness III, Unbreaking II)</li>
           <li>Elytra</li>
@@ -120,9 +138,9 @@
         </ul>
       </div>
 
-      <div class="bg-white bg-opacity-60 backdrop-blur-md p-4 rounded-lg shadow-lg">
-        <h3 class="font-bold text-purple-500 text-lg mb-2">🟣 <span class='inline-block animate-bounce'>💠</span> Epic Crate <span class='inline-block animate-pulse'>🪸</span></h3>
-        <ul class="list-disc list-inside text-sm text-gray-800">
+      <div class="crate-box">
+        <h3 class="font-bold text-purple-400 text-lg mb-2">🟣 <span class='inline-block animate-bounce'>💠</span> Epic Crate <span class='inline-block animate-pulse'>🪸</span></h3>
+        <ul class="list-disc list-inside text-sm">
           <li>Epic Elytra</li>
           <li>Diamond Axe (Efficiency IV)</li>
           <li>Trident (Loyalty III)</li>
@@ -132,9 +150,9 @@
         </ul>
       </div>
 
-      <div class="bg-white bg-opacity-60 backdrop-blur-md p-4 rounded-lg shadow-lg">
-        <h3 class="font-bold text-orange-500 text-lg mb-2">🟠 <span class='inline-block animate-bounce'>🌟</span> Legendary Crate <span class='inline-block animate-pulse'>🌊</span></h3>
-        <ul class="list-disc list-inside text-sm text-gray-800">
+      <div class="crate-box">
+        <h3 class="font-bold text-orange-400 text-lg mb-2">🟠 <span class='inline-block animate-bounce'>🌟</span> Legendary Crate <span class='inline-block animate-pulse'>🌊</span></h3>
+        <ul class="list-disc list-inside text-sm">
           <li>Legendary Weapon</li>
           <li>Elytra + Rockets Bundle</li>
           <li>Netherite Ingot</li>
@@ -147,8 +165,42 @@
     </div>
   </section>
 
-  <footer class="bg-black text-white text-center py-6 text-xs">
+  <footer class="bg-[#001d33] text-white text-center py-6 text-xs">
     &copy; 2025 AxolotlMC - Alle rechten voorbehouden.
   </footer>
+  <div id="kelp-layer" class="fixed bottom-0 left-0 w-full h-[180px] pointer-events-none z-0 flex justify-between px-4 translate-y-10 transition-transform duration-700 ease-out" style="background: linear-gradient(to top, #001d33 15%, transparent);">
+  <!-- Seagrass left -->
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-72 w-auto -ml-5">
+
+  <!-- Center Kelp -->
+  <img src="https://raw.githubusercontent.com/RenzoWit35/WebSite/refs/heads/main/Kelp_Plant.gif" alt="Minecraft kelp" class="h-78 w-auto ml-40">
+
+  <!-- Seagrass right -->
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-72 w-auto ml-16" style="transform: scaleX(-1);">
+</div>
+<script>
+  const kelp = document.getElementById('kelp-layer');
+
+  // Initieel buiten beeld plaatsen bij laden
+  kelp.style.transform = 'translateY(280px)';
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const kelpOffset = Math.min(scrollY * 0.4, 280); // max hoogte = kelp container hoogte
+    kelp.style.transform = `translateY(${300 - kelpOffset}px)`;
+  });
+</script>
+<script>
+  const kelp = document.getElementById('kelp-layer');
+
+  // Initieel buiten beeld plaatsen bij laden
+  kelp.style.transform = 'translateY(280px)';
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const kelpOffset = Math.min(scrollY * 0.4, 280); // max hoogte = kelp container hoogte
+    kelp.style.transform = `translateY(${300 - kelpOffset}px)`;
+  });
+</script>
 </body>
 </html>
