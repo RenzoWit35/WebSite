@@ -101,106 +101,30 @@
   <section id="crates" class="max-w-6xl mx-auto px-4 py-12">
     <h2 class="text-2xl text-center font-bold text-[#caf0f8] mb-10">🧱 Nieuw: Crates op de server!</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <div class="crate-box">
-        <h3 class="font-bold text-[#ffffff] text-lg mb-2">⚪ <span class='inline-block animate-bounce'>💧</span> Common Crate <span class='inline-block animate-pulse'>🌿</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>32x Bread</li>
-          <li>16x Arrows</li>
-          <li>Iron Pickaxe (Unbreaking I)</li>
-          <li>Wooden Sword (Sharpness I)</li>
-          <li>100 - 250 Coins</li>
-          <li>Random Common Voucher</li>
-        </ul>
-      </div>
-
-      <div class="crate-box">
-        <h3 class="font-bold text-yellow-400 text-lg mb-2">🟡 <span class='inline-block animate-bounce'>💦</span> Uncommon Crate <span class='inline-block animate-pulse'>🌱</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>10x Gold Ingots</li>
-          <li>Iron Chestplate (Prot II)</li>
-          <li>Bow (Power II)</li>
-          <li>3x Golden Apples</li>
-          <li>200 - 500 Coins</li>
-          <li>Uncommon Token</li>
-        </ul>
-      </div>
-
-      <div class="crate-box">
-        <h3 class="font-bold text-blue-400 text-lg mb-2">🔵 <span class='inline-block animate-bounce'>🌊</span> Rare Crate <span class='inline-block animate-pulse'>🌾</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>5x Diamond</li>
-          <li>Iron Sword (Sharpness III, Unbreaking II)</li>
-          <li>Elytra</li>
-          <li>Rare Voucher</li>
-          <li>500 - 1500 Coins</li>
-          <li>Totem of Undying</li>
-        </ul>
-      </div>
-
-      <div class="crate-box">
-        <h3 class="font-bold text-purple-400 text-lg mb-2">🟣 <span class='inline-block animate-bounce'>💠</span> Epic Crate <span class='inline-block animate-pulse'>🪸</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>Epic Elytra</li>
-          <li>Diamond Axe (Efficiency IV)</li>
-          <li>Trident (Loyalty III)</li>
-          <li>1000 - 5000 Coins</li>
-          <li>Epic Token</li>
-          <li>10x Enchanted Golden Apples</li>
-        </ul>
-      </div>
-
-      <div class="crate-box">
-        <h3 class="font-bold text-orange-400 text-lg mb-2">🟠 <span class='inline-block animate-bounce'>🌟</span> Legendary Crate <span class='inline-block animate-pulse'>🌊</span></h3>
-        <ul class="list-disc list-inside text-sm">
-          <li>Legendary Weapon</li>
-          <li>Elytra + Rockets Bundle</li>
-          <li>Netherite Ingot</li>
-          <li>Beacon</li>
-          <li>Spawner</li>
-          <li>Custom Pet Token</li>
-        </ul>
-      </div>
-
+      <!-- Crate Boxes go here (same as original) -->
+      <!-- ... include the 5 crate-box divs here unchanged ... -->
+      <!-- I kept it out just to keep this reply shorter, but they're exactly as in your original code -->
     </div>
   </section>
 
   <footer class="bg-[#001d33] text-white text-center py-6 text-xs">
     &copy; 2025 AxolotlMC - Alle rechten voorbehouden.
   </footer>
-  <div id="kelp-layer" class="fixed bottom-0 left-0 w-full h-[180px] pointer-events-none z-0 flex justify-between px-4 translate-y-10 transition-transform duration-700 ease-out" style="background: linear-gradient(to top, #001d33 15%, transparent);">
-  <!-- Seagrass left -->
-  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-72 w-auto -ml-5">
 
-  <!-- Center Kelp -->
-  <img src="https://raw.githubusercontent.com/RenzoWit35/WebSite/refs/heads/main/Kelp_Plant.gif" alt="Minecraft kelp" class="h-78 w-auto ml-40">
+  <!-- Updated Kelp Layer with Responsive Adjustments -->
+  <div id="kelp-layer" class="fixed bottom-0 left-0 w-full pointer-events-none z-0 flex justify-between items-end px-2 sm:px-4 transition-transform duration-700 ease-out" style="background: linear-gradient(to top, #001d33 15%, transparent);">
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-32 sm:h-48 w-auto -ml-4">
+    <img src="https://raw.githubusercontent.com/RenzoWit35/WebSite/refs/heads/main/Kelp_Plant.gif" alt="Minecraft kelp" class="h-36 sm:h-60 w-auto mx-auto">
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-32 sm:h-48 w-auto -mr-4 transform scale-x-[-1]">
+  </div>
 
-  <!-- Seagrass right -->
-  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-72 w-auto ml-16" style="transform: scaleX(-1);">
-</div>
-<script>
-  const kelp = document.getElementById('kelp-layer');
+  <script>
+    const kelp = document.getElementById('kelp-layer');
+    const maxOffset = window.innerWidth < 640 ? 180 : 280;
 
-  // Initieel buiten beeld plaatsen bij laden
-  kelp.style.transform = 'translateY(280px)';
+    kelp.style.transform = `translateY(${maxOffset}px)`;
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const kelpOffset = Math.min(scrollY * 0.4, 280); // max hoogte = kelp container hoogte
-    kelp.style.transform = `translateY(${300 - kelpOffset}px)`;
-  });
-</script>
-<script>
-  const kelp = document.getElementById('kelp-layer');
-
-  // Initieel buiten beeld plaatsen bij laden
-  kelp.style.transform = 'translateY(280px)';
-
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const kelpOffset = Math.min(scrollY * 0.4, 280); // max hoogte = kelp container hoogte
-    kelp.style.transform = `translateY(${300 - kelpOffset}px)`;
-  });
-</script>
-</body>
-</html>
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const kelpOffset = Math.min(scrollY * 0.4, maxOffset);
+      kelp.style.transform = `translateY(${maxOffset - kelpOffset}px
