@@ -31,6 +31,20 @@
       display: inline-block;
       z-index: 1;
     }
+    .logo-title {
+  display: block;
+  margin: 0 auto;
+  max-width: 380px;
+  width: 90%;
+  filter: drop-shadow(4px 4px 0 #003366) drop-shadow(6px 6px 0 #001d33);
+  transition: transform 0.3s ease;
+}
+
+.logo-title:hover {
+  transform: scale(1.05) rotate(-1deg);
+  filter: drop-shadow(2px 2px 8px #00ccff);
+}
+
 
     .nav-button:hover {
       background-color: #b3ecff;
@@ -171,7 +185,7 @@
   </header>
 
   <section id="home" class="text-center py-16">
-    <img src="https://github.com/RenzoWit35/WebSite/blob/main/minecraft_title.png?raw=true" alt="AxolotlMC logo" class="mx-auto w-full max-w-xs md:max-w-md lg:max-w-lg mb-4">
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/minecraft_title.png?raw=true" alt="AxolotlMC logo" class="logo-title mb-4">
     <div class="ip-banner">IP: play.axolotlmc.com</div>
     <p class="text-base mt-6">The most fun Dutch Minecraft server with water & pixel vibes 🌊🟩</p>
   </section>
