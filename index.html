@@ -78,10 +78,36 @@
       z-index: 1;
     }
 
-    .crate-box:hover {
-      transform: scale(1.02);
-      z-index: 2;
-    }
+    .crate-box {
+  background: rgba(150, 245, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.05),
+              0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.crate-box::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.crate-box:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 255, 255, 0.15);
+  background: rgba(180, 255, 255, 0.08);
+}
+
 
     .bubble-container {
       position: fixed;
