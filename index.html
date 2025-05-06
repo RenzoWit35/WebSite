@@ -203,7 +203,7 @@
   let lastBubbleTime = 0;
   document.addEventListener('mousemove', function (e) {
     const now = Date.now();
-    if (now - lastBubbleTime < 500) return; // Limit spawn rate
+    if (now - lastBubbleTime < 100) return; // Limit spawn rate
     lastBubbleTime = now;
 
     const bubble = document.createElement('img');
@@ -213,7 +213,7 @@
     bubble.style.left = ${e.clientX}px;
     bubble.style.top = ${e.clientY}px;
     bubble.style.width = "48px";
-    bubble.style.opacity = 0.4;
+    bubble.style.opacity = 0.2;
     bubble.style.zIndex = -60;
 
     const offsetX = (Math.random() - 0.5) * 60;
@@ -241,7 +241,3 @@
 </script>
 </body>
 </html>
-
-
-
-Kan je inplaats van daarboven de knoppen toevegen de main page gewoon langer maken met hoofdstukken voor bvb de map etc en hoe dieper je gaat hoe donkerder het word
