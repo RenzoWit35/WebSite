@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AxolotlMC</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -16,6 +16,10 @@
       color: #e0f7fa;
     }
 
+    section {
+      transition: background 1s ease;
+    }
+
     .nav-button {
       background-color: #e0f7fa;
       border: 2px solid #90cdf4;
@@ -25,11 +29,13 @@
       border-radius: 6px;
       transition: all 0.2s;
       display: inline-block;
+      z-index: 1;
     }
 
     .nav-button:hover {
       background-color: #b3ecff;
       transform: translateY(-2px);
+       z-index: 2;
     }
 
     .ip-banner {
@@ -40,65 +46,87 @@
       border-radius: 8px;
       margin-top: 10px;
       font-size: 0.75rem;
+      z-index: 1;
     }
 
-    /* Planks */
-    .debris-layer {
-      position: absolute;
+    .hero-button {
+      background-color: #90e0ef;
+      padding: 10px 20px;
+      color: #001d33;
+      font-weight: bold;
+      display: inline-block;
+      border-radius: 6px;
+      margin-top: 20px;
+      border: 2px solid #0077b6;
+      transition: 0.3s;
+      z-index: 1;
+    }
+
+    .hero-button:hover {
+      background-color: #caf0f8;
+      transform: scale(1.05);
+      z-index: 2;
+    }
+
+    .crate-box {
+      background: rgba(150, 245, 255, 0.3);
+      border: 2px solid rgba(150, 245, 255, 0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+      z-index: 1;
+    }
+
+    .crate-box:hover {
+      transform: scale(1.02);
+      z-index: 2;
+    }
+
+    .bubble-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 2;
+      z-index: 0;
       pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
     }
 
-    .plank {
+    .bubble {
       position: absolute;
-      height: 28px;
-      background: #8b5a2b;
-      border-radius: 6px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-      opacity: 0.8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 12px;
-      animation: float 6s infinite ease-in-out;
+      bottom: -100px;
+      width: 48px;
+      height: auto;
+      opacity: 0.3;
+      animation: bubble-up 15s infinite linear;
+      z-index: 0;
     }
 
-    .plank-text {
-      font-size: 0.6rem;
-      font-family: 'Press Start 2P', cursive;
-      color: #fffde7;
-      text-shadow: 1px 1px 2px #00000099;
-      white-space: nowrap;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-      100% { transform: translateY(0); }
-    }
-
-    /* Sea Grass */
-    .grass-layer {
-      pointer-events: none;
-    }
-
-    .grass {
-      width: 4px;
-      height: 50px;
-      background: linear-gradient(to top, #007a33, #00cc66);
-      border-radius: 2px;
-      animation: sway 3s infinite ease-in-out;
-      transform-origin: bottom center;
-    }
-
-    @keyframes sway {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(6deg); }
-      100% { transform: rotate(0deg); }
+    @keyframes bubble-up {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(var(--x-move, 0px), -50vh) rotate(180deg);
+  }
+  100% {
+    transform: translate(var(--x-move, 0px), -100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+      50% {
+        opacity: 0.6;
+        transform: translateY(-50vh) scale(1.1);
+      }
+      100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -106,14 +134,23 @@
   <header class="w-full bg-[#b3ecff] shadow-md p-4">
     <nav class="flex justify-center flex-wrap gap-2 text-sm">
       <a href="#home" class="nav-button">Home</a>
-      <a href="#features" class="nav-button">Features</a>
+      <a href="#news" class="nav-button">Nieuws</a>
+      <a href="#store" class="nav-button">Shop</a>
       <a href="#community" class="nav-button">Community</a>
       <a href="#stats" class="nav-button">Stats</a>
+      <a href="#items" class="nav-button">Items</a>
+      <a href="#ranks" class="nav-button">Ranks</a>
       <a href="#map" class="nav-button">Map</a>
     </nav>
   </header>
 
-  <section id="features" class="max-w-6xl mx-auto px-4 py-32">
+  <section id="home" class="text-center py-16">
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/minecraft_title.png?raw=true" alt="AxolotlMC logo" class="mx-auto w-full max-w-xs md:max-w-md lg:max-w-lg mb-4">
+    <div class="ip-banner">IP: play.axolotlmc.com</div>
+    <p class="text-base mt-6">The most fun Dutch Minecraft server with water & pixel vibes 🌊🟩</p>
+  </section>
+
+<section id="features" class="max-w-6xl mx-auto px-4 py-32">
   <h2 class="text-2xl text-center font-bold text-[#caf0f8] mb-10">💼 Server Features</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div class="crate-box">
@@ -144,16 +181,63 @@
 </section>
 
 
-  <!-- Grass blades at bottom -->
-  <div class="grass-layer absolute bottom-0 left-0 w-full flex justify-around px-6 z-[6]">
-    <div class="grass"></div>
-    <div class="grass" style="height: 60px;"></div>
-    <div class="grass" style="height: 45px;"></div>
-    <div class="grass"></div>
+  <footer class="bg-[#001d33] text-white text-center py-6 text-xs" style="z-index: 100; position: relative;">
+  &copy; 2025 AxolotlMC - All rights reserved.
+  </footer>
+
+  <div id="kelp-layer" class="absolute bottom-0 w-full h-[180px] flex justify-between px-4" style="z-index: 5;">
+    <!-- Seagrass left -->
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-48 sm:h-60 md:h-64 lg:h-72 w-auto -ml-5">
+    <!-- Seagrass right -->
+    <img src="https://github.com/RenzoWit35/WebSite/blob/main/Seagrass_29_JE1.gif?raw=true" alt="Minecraft seagrass" class="h-48 sm:h-60 md:h-64 lg:h-72 w-auto ml-16" style="transform: scaleX(-1);">
   </div>
 
-  <footer class="bg-[#001d33] text-white text-center py-6 text-xs relative z-10">
-    &copy; 2025 AxolotlMC - All rights reserved.
-  </footer>
+  <div class="bubble-container" style="z-index: -50;">
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Bubble_29_JE1_BE1.png?raw=true" class="bubble" style="left: 10%; animation-delay: 0s; --x-move: -20px;">
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Bubble_29_JE1_BE1.png?raw=true" class="bubble" style="left: 25%; animation-delay: 2s; --x-move: 30px;">
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Bubble_29_JE1_BE1.png?raw=true" class="bubble" style="left: 40%; animation-delay: 4s; --x-move: -10px;">
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Bubble_29_JE1_BE1.png?raw=true" class="bubble" style="left: 70%; animation-delay: 1s; --x-move: 15px;">
+  <img src="https://github.com/RenzoWit35/WebSite/blob/main/Bubble_29_JE1_BE1.png?raw=true" class="bubble" style="left: 85%; animation-delay: 3s; --x-move: -25px;">
+</div>
+<script>
+  let lastBubbleTime = 0;
+  document.addEventListener('mousemove', function (e) {
+    const now = Date.now();
+    if (now - lastBubbleTime < 500) return; // Limit spawn rate
+    lastBubbleTime = now;
+
+    const bubble = document.createElement('img');
+    bubble.src = "https://github.com/RenzoWit35/WebSite/blob/main/Bubble_29_JE1_BE1.png?raw=true";
+    bubble.className = "bubble";
+    bubble.style.position = "absolute";
+    bubble.style.left = ${e.clientX}px;
+    bubble.style.top = ${e.clientY}px;
+    bubble.style.width = "24px";
+    bubble.style.opacity = 0.4;
+    bubble.style.zIndex = -60;
+
+    const offsetX = (Math.random() - 0.5) * 60;
+    bubble.style.setProperty('--x-move', ${offsetX}px);
+    bubble.style.animation = "bubble-fly 2.5s ease-out forwards";
+
+    document.body.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 2500);
+  });
+
+  const flyStyle = document.createElement('style');
+  flyStyle.innerHTML = 
+    @keyframes bubble-fly {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translate(var(--x-move, 0px), -120px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  ;
+  document.head.appendChild(flyStyle);
+</script>
 </body>
 </html>
